@@ -1,0 +1,27 @@
+module.exports = {
+	mode: 'jit',
+	purge: [ './pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}' ],
+	darkMode: false, // or 'media' or 'class'
+	theme: {
+		screens: {
+			sm: '375px',
+			md: '960px',
+			lg: '1440px'
+		},
+		extend: {
+			colors: {
+				'bg-color': '#131518',
+				'card-bg-from': '#232A34',
+				'card-bg-to': '#181E27',
+				'star-bg': '#262E38',
+				'paragraph-font-color': '#969FAD',
+				'numbers-font-coler': '#969FAD',
+				'button-bg-color': '#FC7614'
+			},
+			fontFamily: {
+				Overpass: [ 'Overpass' ]
+			}
+		}
+	},
+	plugins: []
+};
