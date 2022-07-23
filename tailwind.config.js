@@ -11,8 +11,7 @@ module.exports = {
 		extend: {
 			colors: {
 				'bg-color': '#131518',
-				'card-bg-from': '#232A34',
-				'card-bg-to': '#181E27',
+				'card-bg': '#1F262F',
 				'star-bg': '#262E38',
 				'paragraph-font-color': '#969FAD',
 				'numbers-font-coler': '#969FAD',
