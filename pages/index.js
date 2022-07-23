@@ -1,7 +1,14 @@
 import Head from 'next/head';
+import { useRouter } from 'next/router';
+import { useState } from 'react';
 import Numbers from '../components/Numbers/numbers';
 
 export default function Home({ data }) {
+	const router = useRouter();
+	const submitHandler = () => {
+		router.push('/thanks');
+		console.log('click');
+	};
 	return (
 		<div>
 			<Head>
@@ -25,11 +32,10 @@ export default function Home({ data }) {
 						improve our offering!
 					</div>
 					<div className="flex justify-between mt-[24px] mb-[32px]">
-						{data.map((item) => (
-							<Numbers name={item.name} />
-						))}
+						{data.map((item) => <Numbers name={item.name} key={item.id} />)}
 					</div>
 					<button
+						onClick={submitHandler}
 						type="submit"
 						className="bg-button-bg-color w-full h-[45px] rounded-[22.5px] text-white font-Overpass font-bold tracking-[2px] hover:text-button-bg-color hover:bg-white"
 					>
