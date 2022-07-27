@@ -15,7 +15,8 @@ module.exports = {
 				'star-bg': '#262E38',
 				'paragraph-font-color': '#969FAD',
 				'numbers-font-color': '#969FAD',
-				'button-bg-color': '#FC7614'
+				'button-bg-color': '#FC7614',
+				'button-hover': '#979797'
 			},
 			fontFamily: {
 				Overpass: [ 'Overpass' ]

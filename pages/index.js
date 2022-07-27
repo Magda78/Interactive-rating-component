@@ -1,13 +1,22 @@
 import Head from 'next/head';
 import { useRouter } from 'next/router';
-import { useState } from 'react';
 import Numbers from '../components/Numbers/numbers';
+import { useSelector } from 'react-redux';
+import { number, delated } from '../slices/numbers';
 
 export default function Home({ data }) {
+	const selector = useSelector(number);
+	const addedId = selector.map((item) => item.id);
+	const addedIds = addedId[0]
+	//const removed = useSelector(delated);
+	//const removedId = removed.map((item) => item.id);
+	//const removedIds = removedId[0];
 	const router = useRouter();
+	
 	const submitHandler = () => {
 		router.push('/thanks');
-		console.log('click');
+
+		//console.log('home page items from redux', id);
 	};
 	return (
 		<div>
@@ -32,7 +41,9 @@ export default function Home({ data }) {
 						improve our offering!
 					</div>
 					<div className="flex justify-between mt-[24px] mb-[32px]">
-						{data.map((item) => <Numbers name={item.name} key={item.id} />)}
+						{data.map((item) => (
+							<Numbers name={item.name} key={item.id} id={item.id} addedId={addedIds}/>
+						))}
 					</div>
 					<button
 						onClick={submitHandler}
