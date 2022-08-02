@@ -49,9 +49,23 @@ export default function Home({ data }) {
 }
 export async function getStaticProps() {
 	const host = process.env.HOST;
-	const res = await fetch(`${host}/api/numbers`);
-	const data = await res.json();
-	console.log(data);
+	let data;
+	let error = '';
+	try {
+		const res = await fetch(`${host}/api/numbers`, {
+			method: 'GET',
+			headers: {
+				// update with your user-agent
+				'User-Agent':
+					'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.89 Safari/537.36',
+				Accept: 'application/json; charset=UTF-8'
+			}
+		});
+
+		data = await res.json();
+	} catch (e) {
+		error = e.toString();
+	}
 	return {
 		props: {
 			data
