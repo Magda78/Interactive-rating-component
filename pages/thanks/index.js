@@ -5,18 +5,12 @@ function Thanks() {
 	const selector = useSelector(number);
 
 	return (
-		<div role="main" className="w-full h-screen bg-bg-color flex justify-center items-center">
-			<div
-				role="section"
-				className="w-[412px] h-[416px] bg-card-bg rounded-[30px] p-[32px] flex flex-col justify-center items-center"
-			>
+		<div role="section" className="w-full h-screen bg-bg-color flex justify-center items-center">
+			<div className="w-[412px] h-[416px] bg-card-bg rounded-[30px] p-[32px] flex flex-col justify-center items-center">
 				<img src="img/illustration-thank-you.svg" alt="thanks" />
-				<div
-					role="section"
-					className="pl-[20px] pt-[4px] pr-[19px] pb-[4px] mb-[32px] mt-[32px] bg-star-bg rounded-[22.5px] flex justify-center items-center"
-				>
+				<div className="pl-[20px] pt-[4px] pr-[19px] pb-[4px] mb-[32px] mt-[32px] bg-star-bg rounded-[22.5px] flex justify-center items-center">
 					{selector.map((item) => (
-						<h1 className="text-[15px] text-button-bg-color font-Overpass">
+						<h1 className="text-[15px] text-button-bg-hover font-Overpass">
 							You selected {item.name} out of 5
 						</h1>
 					))}
