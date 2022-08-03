@@ -4,7 +4,7 @@ import Numbers from '../components/Numbers/numbers';
 import { useSelector } from 'react-redux';
 import { number } from '../slices/numbers';
 
-export default function Home(data) {
+export default function Home({data}) {
 	const selector = useSelector(number);
 	const addedId = selector.map((item) => item.id);
 	const addedIds = addedId[0];
@@ -34,7 +34,7 @@ export default function Home(data) {
 						improve our offering!
 					</div>
 					<div className="flex justify-between mt-[24px] mb-[32px]">
-						{data.data.map((item) => (
+						{data.map((item) => (
 							<Numbers name={item.name} key={item.id} id={item.id} addedId={addedIds} />
 						))}
 					</div>
